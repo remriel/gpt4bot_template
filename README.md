@@ -11,3 +11,4 @@ This is a template for a chatbot using GPT-4 API.
     pip install -r requirements.txt
 
     python app.py
+Navigate to http://localhost:5001/
