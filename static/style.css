@@ -1,0 +1,308 @@
+/* style.css */
+
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #F7F7FF;
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0.6rem;
+}
+
+.code-block {
+  background-color: #121212;
+  color: #F7F7FF;
+  border: 1px solid #AD8A64;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-family: "Montserrat", Consolas, "SFMono-Regular", Menlo, Courier, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin: 0.5em 0;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #121212;
+  z-index: 1000;
+}
+
+
+p.p2 {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 3px solid #6C8EAD;
+    border-radius: 5px;
+    background-color: #121212;
+	color: #F7F7FF;
+	align-items: left;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+}
+
+.p2 {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 3px solid #6C8EAD;
+    border-radius: 5px;
+    background-color: #121212;
+	color: #F7F7FF;
+	align-items: left;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	white-space: pre-wrap; /* Add this property to preserve line breaks and spaces */
+	overflow-wrap: break-word;
+}
+
+p.p1 {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 1px solid #AD8A64;
+    border-radius: 5px;
+    background-color: #121212;
+}
+
+pre {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+	white-space: pre-wrap; /* Add this property to preserve line breaks and spaces */
+	overflow-wrap: break-word;
+}
+
+.p1 {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 1px solid #AD8A64;
+    border-radius: 5px;
+    background-color: #121212;
+	white-space: pre-wrap; /* Add this property to preserve line breaks and spaces */
+	overflow-wrap: break-word;
+	
+}
+p.gpt4-response {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 3px solid #6C8EAD;
+    border-radius: 5px;
+    background-color: #121212;
+	color: #F7F7FF;
+	align-items: left;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+}
+.timestamp {
+    color: #6C8EAD; /* Change the color */
+    font-size: 14px; /* Change the font size */
+}
+.gpt4-response {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem;
+    border: 3px solid #6C8EAD;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #F7F7FF;
+    align-items: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    white-space: pre-wrap; /* Add this property to preserve line breaks and spaces */
+	overflow-wrap: break-word;
+}
+
+p.h1{
+	color: #6C8EAD;
+	font-weight: 500;
+	text-align: left;
+	margin: 0;
+	font-size: 18px;
+	padding: 0;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px #6C8EAD, 0 0 1px #6C8EAD;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+	font-size: 18px;
+    margin-bottom: 1rem;
+}
+
+label {
+	font-size: 20px;
+    margin-right: 1rem;
+	margin-bottom: 0.25rem;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	color: #6C8EAD;
+	text-shadow: 0 0 1px #6C8EAD, 0 0 1px #6C8EAD;
+	letter-spacing: 3px;
+}
+/* Form styles */
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-left, .form-right {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    width: 100%; /* Add width property */
+    height: 10rem; /* Add height property */
+    padding: 0.6rem;
+	margin: 0;
+    border: 1px solid #AD8A64;
+    background-color: #121212;
+    color: #F7F7FF;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #AD8A64;
+	width: 100%;
+    color: #F7F7FF;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+	font-weight: 500;
+}
+
+button:hover {
+    background-color: #6C8EAD;
+	font-weight: 500;
+	font-size: 18px;
+}
+button.copy {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #6C8EAD;
+	width: 100%;
+    color: #F7F7FF;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+	font-weight: 500;
+}
+button.copy:hover{
+    background-color: #AD8A64;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+/* Response styles */
+h2 {
+    margin-bottom: 0.5rem;
+	color: #AD8A64;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-shadow: 0 0 1px #AD8A64, 0 0 1px #AD8A64;
+	font-weight: 500;
+	letter-spacing: 3px;
+}
+h3 {
+    color: #AD8A64;
+	font-size: 20px;
+	margin-bottom: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px #AD8A64, 0 0 1px #AD8A64;
+	padding: 0;
+}
+h5 {
+    color: #6C8EAD;
+	font-size: 18px;
+	margin-bottom: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px #6C8EAD, 0 0 1px #6C8EAD;
+	padding: 0;
+}
+
+p {
+    padding: 0.6rem;
+	margin-bottom: 0px;
+	margin: 0;
+	padding: 0;
+	text-align: left; /* or justify */
+	font-size: 18px;
+}
+
+textarea {
+    flex-grow: 1;
+    width: 100%;
+	height: 10rem; /* Add height property */
+    padding: 0.6rem;
+	margin: 0px;
+    border: 2px solid #AD8A64;
+    background-color: #121212;
+    color: #F7F7FF;
+    font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Styles for the track */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #6C8EAD; /* Match existing box shadow color */
+    background: #AD8A64; /* Match existing background color */
+    border-radius: 10px;
+    border: 0px solid #AD8A64;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #AD8A64; /* Match existing background color */
+}
+
+/* Styles for the thumb */
+input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 2px #6C8EAD; /* Match existing box shadow color */
+    border: 0px solid #F7F7FF; /* Match existing border color */
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #AD8A64; /* Match existing accent color */
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #6C8EAD;
+    border: 2px solid #F7F7FF; /* Match existing border color */
+}
+
+input[type="range"]:focus {
+    outline: none;
+}

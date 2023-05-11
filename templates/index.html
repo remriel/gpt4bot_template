@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Chat with GPT-4</title>
+</head>
+<body>
+    <div class="container">
+	<br>
+        <form method="POST" class="form">
+            <div class="form-left">
+                <div class="form-group">
+                    <label for="system_content">System Prompt</label>
+                    <textarea id="system_content" name="system_content" rows="10" cols="50" placeholder="Enter your message here" required>{{ system_content }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="user_content">User Prompt</label>
+                    <textarea id="user_content" name="user_content" rows="10" cols="50" placeholder="Enter your message here" required>{{ user_content }}</textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+            <div class="form-right">
+                <div class="form-group">
+                    <label for="temperature">Temperature</label>
+                    <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.1" value="{{ temperature|default(0.3) }}">
+                    <span id="temperature-value">{{ temperature|default(0.3) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="max_tokens">Max Tokens</label>
+                    <input type="range" id="max_tokens" name="max_tokens" min="50" max="2050" step="50" value="{{ max_tokens|default(2050) }}">
+                    <span id="max_tokens-value">{{ max_tokens|default(2050) }}</span>
+                </div>
+            </div>
+        </form>
+
+        {% if response_text %}
+        <label>Current Conversation</label>
+        <h5>User Prompt</h5>
+          <pre class="p2">{{ user_content }}</pre>
+        <h5>Response</h5>
+          <pre class="gpt4-response">{{ response_text }}</pre>
+		  <br>
+		  <button id="copy-response" type="button" class="copy">Copy to clipboard</button>
+		{% endif %}
+        {% if history %}
+		<br>
+		<br>
+        <h3>Prompt History</h3>
+        {% for item in history %}
+            <h3>User Prompt</h3>
+              <pre class="p1">{{ item.user_content }}</pre>
+            <h3>Response (<label><small><span class="timestamp">Timestamp: {{ item.timestamp }})</span></small></label></h3>
+              <pre class="p1">{{ item.response_text }}</pre>
+        {% endfor %}
+		{% endif %}
+    </div>
+    <script>
+        document.getElementById("temperature").oninput = function() {
+            document.getElementById("temperature-value").innerHTML = this.value;
+        }
+        document.getElementById("max_tokens").oninput = function() {
+            document.getElementById("max_tokens-value").innerHTML = this.value;
+        }
+		document.getElementById("copy-response").addEventListener("click", function() {
+		const responseText = document.querySelector(".gpt4-response");
+		if (responseText) {
+			const textArea = document.createElement("textarea");
+			textArea.value = responseText.textContent;
+			document.body.appendChild(textArea);
+			textArea.select();
+			document.execCommand("copy");
+			document.body.removeChild(textArea);
+			alert("GPT-4 response copied to clipboard!");
+		}
+		
+	});
+    function formatPSTDate(timestamp) {
+        const date = new Date(timestamp);
+        const pstOffset = -8 * 60;
+        const pstDate = new Date(date.getTime() + (date.getTimezoneOffset() - pstOffset) * 60 * 1000);
+        const hours = pstDate.getHours() % 12 || 12;
+        const minutes = pstDate.getMinutes();
+        const amPm = pstDate.getHours() >= 12 ? 'PM' : 'AM';
+        return `${hours}:${minutes.toString().padStart(2, '0')} ${amPm}`;
+    }
+
+	document.querySelectorAll(".timestamp").forEach((element) => {
+    element.textContent = formatPSTDate(element.textContent);
+	});
+	
+    </script>
+</body>
+</html>
