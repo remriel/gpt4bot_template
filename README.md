@@ -1,6 +1,6 @@
 # GPT-4 Chatbot Template
 
-![GPT-4 Chatbot Template](https://i.ibb.co/q7JRYdG/GPT4.png)
+![GPT-4 Chatbot Template](https://i.ibb.co/5Fk8qhs/gpt.png)
 
 This is a template for a chatbot using GPT-4 API.
 
