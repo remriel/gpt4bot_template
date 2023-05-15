@@ -2,7 +2,7 @@
 
 ![GPT-4 Chatbot Template](https://i.ibb.co/5Fk8qhs/gpt.png)
 
-This is a template for a chatbot using GPT-4 API.
+This is a template for a chatbot using GPT-4 API with conversation history.
 
 # Install
 
